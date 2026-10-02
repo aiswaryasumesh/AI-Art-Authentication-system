@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app login-page">
+
+    <button class="back" onclick="location.href='index.html'">‹</button>
+
+    <div class="login-logo">✦</div>
+
+    <h1>Welcome Back</h1>
+    <p class="login-text">
+        Sign in to continue your artwork analysis
+    </p>
+
+    <form onsubmit="loginUser(event)">
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <div class="forgot">
+            <span></span>
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <p class="signup">
+        Don't have an account?
+        <a href="#">Create Account</a>
+    </p>
+
+</div>
+
+<script>
+function loginUser(event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (email && password) {
+        localStorage.setItem("userEmail", email);
+        location.href = "home.html";
+    }
+}
+</script>
+
+</body>
+</html>

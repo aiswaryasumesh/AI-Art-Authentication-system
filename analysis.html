@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app center">
+
+<div class="loader">
+    <span id="percent">0%</span>
+</div>
+
+<h1>Analyzing Artwork</h1>
+
+<p id="status">
+    Preparing forensic analysis...
+</p>
+
+<div class="progress">
+
+    <div>
+        <span>Spatial Analysis</span>
+        <b>✓</b>
+    </div>
+
+    <div>
+        <span>Frequency Analysis</span>
+        <b>✓</b>
+    </div>
+
+    <div>
+        <span>Metadata Inspection</span>
+        <b>✓</b>
+    </div>
+
+    <div>
+        <span>AI Model Detection</span>
+        <b>✓</b>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+let value = 0;
+
+let timer = setInterval(() => {
+
+    value += 5;
+
+    document.getElementById("percent").innerText =
+        value + "%";
+
+    if (value >= 100) {
+
+        clearInterval(timer);
+
+        setTimeout(() => {
+            location.href = "result.html";
+        }, 500);
+    }
+
+}, 120);
+
+</script>
+
+</body>
+</html>

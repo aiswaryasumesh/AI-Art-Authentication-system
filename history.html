@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <div class="page">
+
+        <button class="icon" onclick="location.href='home.html'">
+            ‹
+        </button>
+
+        <h2>History</h2>
+
+    </div>
+
+
+    <!-- History Header -->
+    <div class="history-header">
+
+        <div>
+            <small>YOUR ANALYSIS RECORDS</small>
+            <h3>Recent Analyses</h3>
+        </div>
+
+        <button class="clear-button" onclick="clearHistory()">
+            Clear
+        </button>
+
+    </div>
+
+
+    <!-- History List -->
+    <div id="historyList" class="history">
+
+        <div class="history-item">
+
+            <div class="thumb">
+                IMG
+            </div>
+
+            <div>
+
+                <strong>Artwork_001</strong>
+
+                <small>
+                    12 Sep 2026 · 04:20 PM
+                </small>
+
+                <em>
+                    Likely AI-Generated
+                </em>
+
+            </div>
+
+            <b class="history-score">
+                87%
+            </b>
+
+        </div>
+
+
+        <div class="history-item">
+
+            <div class="thumb">
+                IMG
+            </div>
+
+            <div>
+
+                <strong>Artwork_002</strong>
+
+                <small>
+                    11 Sep 2026 · 07:15 PM
+                </small>
+
+                <em class="real">
+                    Likely Authentic
+                </em>
+
+            </div>
+
+            <b class="history-score real-score">
+                78%
+            </b>
+
+        </div>
+
+
+        <div class="history-item">
+
+            <div class="thumb">
+                IMG
+            </div>
+
+            <div>
+
+                <strong>Artwork_003</strong>
+
+                <small>
+                    10 Sep 2026 · 02:45 PM
+                </small>
+
+                <em>
+                    Likely AI-Generated
+                </em>
+
+            </div>
+
+            <b class="history-score">
+                91%
+            </b>
+
+        </div>
+
+    </div>
+
+
+    <!-- Empty History Message -->
+    <div id="emptyHistory" class="empty-history hidden">
+
+        <div class="empty-icon">
+            ◷
+        </div>
+
+        <h3>No Analysis History</h3>
+
+        <p>
+            Your analyzed artworks will appear here.
+        </p>
+
+        <button onclick="location.href='scan.html'">
+            Analyze Artwork
+        </button>
+
+    </div>
+
+
+    <!-- Return Home -->
+    <button
+        class="home-return"
+        onclick="location.href='home.html'"
+    >
+        ← Return to Home
+    </button>
+
+
+    <!-- Bottom Navigation -->
+    <nav>
+
+        <a href="home.html">
+            ⌂
+            <small>Home</small>
+        </a>
+
+        <a href="scan.html">
+            ＋
+            <small>Analyze</small>
+        </a>
+
+        <a class="active" href="history.html">
+            ◷
+            <small>History</small>
+        </a>
+
+        <a href="settings.html">
+            ⚙
+            <small>Settings</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+    function clearHistory() {
+
+        const historyList = document.getElementById("historyList");
+        const emptyHistory = document.getElementById("emptyHistory");
+
+        if (!historyList || !emptyHistory) {
+            return;
+        }
+
+        const confirmClear = confirm(
+            "Are you sure you want to clear your analysis history?"
+        );
+
+        if (!confirmClear) {
+            return;
+        }
+
+        historyList.innerHTML = "";
+
+        historyList.classList.add("hidden");
+        emptyHistory.classList.remove("hidden");
+
+    }
+
+</script>
+
+</body>
+</html>

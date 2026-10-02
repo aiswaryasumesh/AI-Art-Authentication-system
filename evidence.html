@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Evidence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <header class="page">
+
+        <button class="icon" onclick="location.href='result.html'">
+            ‹
+        </button>
+
+        <h2>Visual Evidence</h2>
+
+    </header>
+
+
+    <!-- Evidence Tabs -->
+    <div class="tabs">
+
+        <button class="selected" data-target="spatial">
+            Spatial
+        </button>
+
+        <button data-target="frequency">
+            Frequency
+        </button>
+
+        <button data-target="original">
+            Original
+        </button>
+
+    </div>
+
+
+    <!-- Spatial Evidence -->
+    <div id="spatial" class="evidence-view">
+
+        <div class="heatmap">
+
+            <div class="face"></div>
+
+            <div class="spot s1"></div>
+            <div class="spot s2"></div>
+            <div class="spot s3"></div>
+
+        </div>
+
+        <div class="explanation">
+
+            <b>!</b>
+
+            <div>
+                <strong>Spatial Analysis</strong>
+
+                <p>
+                    Visual artifacts and unusual
+                    image regions detected during
+                    spatial analysis.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <small>Artifact Score</small>
+                <b>82%</b>
+            </div>
+
+            <div>
+                <small>Regions</small>
+                <b>03</b>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Frequency Evidence -->
+    <div id="frequency" class="evidence-view hidden">
+
+        <div class="frequency-box">
+
+            <div class="frequency-visual">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <h3>Frequency Analysis</h3>
+
+            <p>
+                Frequency-domain patterns and
+                pixel-level inconsistencies detected
+                in the artwork.
+            </p>
+
+        </div>
+
+        <div class="explanation">
+
+            <b>〽</b>
+
+            <div>
+                <strong>Frequency Signal</strong>
+
+                <p>
+                    The frequency representation
+                    highlights unusual high-frequency
+                    patterns that may indicate
+                    synthetic image generation.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <small>Frequency Score</small>
+                <b>76%</b>
+            </div>
+
+            <div>
+                <small>Pattern Level</small>
+                <b>High</b>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Original Artwork -->
+    <div id="original" class="evidence-view hidden">
+
+        <div class="original-box">
+
+            <div class="original-placeholder">
+                <span>IMG</span>
+            </div>
+
+            <h3>Original Artwork</h3>
+
+            <p>
+                Original uploaded artwork used
+                for forensic analysis.
+            </p>
+
+        </div>
+
+        <div class="explanation">
+
+            <b>◎</b>
+
+            <div>
+                <strong>Original Image</strong>
+
+                <p>
+                    This view represents the original
+                    artwork before forensic evidence
+                    visualization.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Navigation -->
+    <nav>
+
+        <a href="home.html">
+            ⌂
+            <small>Home</small>
+        </a>
+
+        <a href="scan.html">
+            ＋
+            <small>Analyze</small>
+        </a>
+
+        <a href="history.html">
+            ◷
+            <small>History</small>
+        </a>
+
+        <a href="settings.html">
+            ⚙
+            <small>Settings</small>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+    // Evidence Tabs
+
+    const tabs = document.querySelectorAll(".tabs button");
+    const views = document.querySelectorAll(".evidence-view");
+
+    tabs.forEach(function(tab) {
+
+        tab.addEventListener("click", function() {
+
+            // Remove selected state
+            tabs.forEach(function(button) {
+                button.classList.remove("selected");
+            });
+
+            // Select clicked tab
+            tab.classList.add("selected");
+
+            // Hide all views
+            views.forEach(function(view) {
+                view.classList.add("hidden");
+            });
+
+            // Show selected view
+            const target = document.getElementById(
+                tab.getAttribute("data-target")
+            );
+
+            if (target) {
+                target.classList.remove("hidden");
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

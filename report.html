@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="page">
+        <button class="icon" onclick="location.href='result.html'">‹</button>
+        <h2>Forensic Report</h2>
+    </div>
+
+    <div class="report">
+
+        <small>AI ART AUTHENTICATION REPORT</small>
+        <h1>Forensic Analysis</h1>
+
+        <div class="report-verdict">
+            <small>FINAL VERDICT</small>
+            <h1>LIKELY AI-GENERATED</h1>
+            <div class="report-confidence">87%</div>
+            <p>
+                Multiple forensic signals indicate
+                characteristics associated with AI-generated imagery.
+            </p>
+        </div>
+
+        <h3>Analysis Details</h3>
+
+        <div class="row">
+            <span>Analysis ID</span>
+            <strong>AA-2026-00482</strong>
+        </div>
+
+        <div class="row">
+            <span>File Type</span>
+            <strong>Image</strong>
+        </div>
+
+        <div class="row">
+            <span>Resolution</span>
+            <strong>2048 × 2048</strong>
+        </div>
+
+        <div class="row">
+            <span>Integrity</span>
+            <strong class="status-good">Verified</strong>
+        </div>
+
+        <h3>Forensic Signals</h3>
+
+        <div class="signal">
+            <span>Spatial</span>
+            <div><i style="width:84%"></i></div>
+            <b>84%</b>
+        </div>
+
+        <div class="signal">
+            <span>Frequency</span>
+            <div><i style="width:91%"></i></div>
+            <b>91%</b>
+        </div>
+
+        <div class="signal">
+            <span>Metadata</span>
+            <div><i style="width:72%"></i></div>
+            <b>72%</b>
+        </div>
+
+        <div class="signal">
+            <span>Forensics</span>
+            <div><i style="width:88%"></i></div>
+            <b>88%</b>
+        </div>
+
+        <h3>Evidence Summary</h3>
+
+        <div class="report">
+            <p>✓ Spatial artifacts detected</p>
+            <p>✓ Frequency irregularities detected</p>
+            <p>! Metadata anomaly detected</p>
+            <p>✓ Pixel-level inconsistencies detected</p>
+        </div>
+
+        <h3>Conclusion</h3>
+
+        <p>
+            The combined spatial, frequency, metadata and
+            pixel-level evidence suggests that this artwork
+            is likely AI-generated.
+        </p>
+
+        <h3>Notice</h3>
+
+        <p>
+            This is an automated forensic assessment and
+            should not be considered absolute proof of image origin.
+        </p>
+
+        <div class="report-actions">
+
+            <button onclick="window.print()">
+                🖨️ Export / Print Report
+            </button>
+
+            <button class="secondary" onclick="shareReport()">
+                ↗ Share Report
+            </button>
+
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="home.html">⌂<small>Home</small></a>
+        <a href="scan.html">＋<small>Analyze</small></a>
+        <a href="history.html">◷<small>History</small></a>
+        <a href="settings.html">⚙<small>Settings</small></a>
+    </nav>
+
+</div>
+
+<script>
+function shareReport() {
+
+    if (navigator.share) {
+
+        navigator.share({
+            title: "AI Art Authentication Report",
+            text: "Forensic analysis report from AI Art Authenticator."
+        });
+
+    } else {
+
+        alert("Sharing is not supported on this browser.");
+
+    }
+}
+</script>
+
+</body>
+</html>

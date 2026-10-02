@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Artwork</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="page">
+        <button class="icon" onclick="location.href='home.html'">‹</button>
+        <h2>Analyze Artwork</h2>
+    </div>
+
+    <div class="upload">
+
+        <div class="upload-icon">↑</div>
+
+        <h2>Upload Artwork</h2>
+
+        <p>Select an image to start forensic analysis.</p>
+
+        <!-- Choose Image -->
+        <label for="imageInput" class="button">
+            🖼️ Choose Image
+        </label>
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
+
+        <!-- Open Camera -->
+        <label for="cameraInput" class="camera-button">
+            📷 Open Camera
+        </label>
+
+        <input
+            type="file"
+            id="cameraInput"
+            accept="image/*"
+            capture="environment"
+        >
+
+    </div>
+
+    <!-- Image Preview -->
+    <div id="preview" class="preview hidden">
+
+        <img id="previewImage" alt="Selected artwork">
+
+        <button onclick="startAnalysis()">
+            Analyze Artwork
+        </button>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav>
+
+        <a href="home.html">
+            ⌂
+            <small>Home</small>
+        </a>
+
+        <a class="active" href="scan.html">
+            ＋
+            <small>Analyze</small>
+        </a>
+
+        <a href="history.html">
+            ◷
+            <small>History</small>
+        </a>
+
+        <a href="settings.html">
+            ⚙
+            <small>Settings</small>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

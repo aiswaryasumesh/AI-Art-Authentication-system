@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="page">
+    <button class="icon" onclick="location.href='home.html'">‹</button>
+    <h2>Detection Result</h2>
+</header>
+
+<div class="result-image">
+    <img id="resultImg" alt="Artwork">
+</div>
+
+<div class="verdict">
+
+    <small>FINAL VERDICT</small>
+
+    <h1>AI GENERATED</h1>
+
+    <p>High confidence detection</p>
+
+    <div class="confidence">
+        94%
+    </div>
+
+</div>
+
+<div class="card-list">
+
+    <div>
+        <span>Spatial Analysis</span>
+        <b>91%</b>
+    </div>
+
+    <div>
+        <span>Frequency Analysis</span>
+        <b>96%</b>
+    </div>
+
+    <div>
+        <span>Metadata Analysis</span>
+        <b>88%</b>
+    </div>
+
+    <div>
+        <span>Model Detection</span>
+        <b>97%</b>
+    </div>
+
+</div>
+
+<button onclick="location.href='evidence.html'">
+    View Visual Evidence
+</button>
+
+<button class="secondary" onclick="location.href='report.html'">
+    Generate Forensic Report
+</button>
+
+</div>
+
+<script>
+const image = localStorage.getItem("artwork");
+
+if (image) {
+    document.getElementById("resultImg").src = image;
+}
+</script>
+
+</body>
+</html>
