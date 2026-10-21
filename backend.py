@@ -64,12 +64,13 @@ model.fc = nn.Linear(
 # 5. Load trained model
 # ============================================================
 
-model.load_state_dict(
-    torch.load(
-        "resnet50_cifake_3epochs.pth",
-        map_location=device
-    )
+checkpoint = torch.load(
+    r"C:\Users\User\Desktop\AI_ART_AUTHENTICATION\resnet50_artbench.pth",
+    map_location=device,
+    weights_only=True
 )
+
+model.load_state_dict(checkpoint["model_state_dict"])
 
 model = model.to(device)
 
@@ -84,9 +85,12 @@ print("ResNet-50 loaded successfully!")
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    transforms.Normalize(
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]
+    )
 ])
-
 
 # ============================================================
 # 7. Class names

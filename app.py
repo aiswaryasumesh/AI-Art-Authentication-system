@@ -223,7 +223,7 @@ if uploaded_file is not None:
                 prediction
             )
 
-        with col2:
+        with col2:b
             st.metric(
                 "Confidence",
                 f"{confidence:.2f}%"
