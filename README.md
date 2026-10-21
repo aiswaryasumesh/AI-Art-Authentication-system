@@ -225,9 +225,9 @@ These enhancements should be described as planned features until they are implem
 
 ## 👩‍💻 Contributors
 
-Aiswarya Sumesh - Backend development
-Alina Francis - Frontend development
-Amal N.U - App development
+Aiswarya Sumesh - Backend development,
+Alina Francis - Frontend development,
+Amal N.U - App development,
 Anandhu V.S - Integration
 
 
